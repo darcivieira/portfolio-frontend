@@ -1,0 +1,13 @@
+version: '3'
+services:
+  portfolio_frontend:
+    build: .
+    container_name: portfolio_frontend
+    restart: always
+    entrypoint:
+      - VIRTUAL_HOST=djvieirajr.com,portfolio.djvieirajr.com
+      - LETSENCRYPT_HOST=djvieirajr.com,portfolio.djvieirajr.com
+      - VIRTUAL_PORT=3000
+      - HTTTPS_METHOD=redirect
+    networks:
+      - brasinov
