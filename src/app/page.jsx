@@ -64,15 +64,21 @@ export default function Home() {
               Automizo processos e desenvolvo soluções corporativas.{' '}
             </span>
           </div>
-          <div className="w-full h-2/3 p-10 bg-white flex flex-col justify-start items-center content-center relative">
-            <div className="rounded-full bg-white p-2 absolute top-[-40px] md:top-[-60px] lg:top-[-140px]">
+          <div className="w-full h-3/6 bg-white flex flex-col justify-start items-center content-center relative">
+            <div className="rounded-full bg-white p-2 absolute top-[-40px] md:top-[-50px] lg:top-[-140px]">
               <img
                 className="inline-block h-20 w-20 rounded-full ring-2 ring-white object-cover md:h-20 md:w-20 lg:h-40 lg:w-40"
                 src="/djvjr.png"
                 alt=""
               />
             </div>
-            <img src="/hero-devices.svg" className="h-full" alt="" />
+            <div className="static h-full w-full">
+              <img
+                src="/hero-devices.svg"
+                className="object-scale-down w-full h-full"
+                alt=""
+              />
+            </div>
           </div>
         </div>
         <div
@@ -212,114 +218,24 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* <div className="w-1/2 p-2">
-              <h1 className="mb-2 text-xl">Um pouco mais...</h1>
-              <div className="border-solid border-2 border-cyan-50 rounded-lg w-full bg-cyan-50 p-4">
-                <span className="font-normal text-justify">
-                  Sou de Palhoça, Santa Catarina e atuo com tecnologia desde
-                  2006. Iniciei minha carreira como montador de equipamento em
-                  loja de informática, passei por áreas como apoio e suporte
-                  técnico, também pude atuar com administração de redes por mais
-                  de 10 anos - o que me permitiu uma proximidade com lógica de
-                  programação - e nos últimos 6 anos optei por uma transição de
-                  carreira, para desenvolvimento de software, pois pude ser
-                  ainda mais eficiente e apoiar outras áreas com o
-                  desenvolvimento de automações e criando soluções para o
-                  mercado - e isso é o que mais me deixa empolgado com esta
-                  área, poder ajudar e melhorar a experiência de outras pessoas.
-                </span>
-              </div>
-            </div>
-            <div className="w-1/2 p-2">
-              <h1 className="mb-2 text-xl text-center">Minhas habilidades</h1>
-              <div className=" rounded-lg w-full">
-                <div className="flex flex-row items-center space-x-5">
-                  <div className="m-1 border-solid border-2 border-cyan-100 p-1 rounded-xl bg-cyan-100 w-1/3 flex flex-row">
-                    <span className="text-center w-full">Python</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
-                    <div
-                      className="bg-cyan-900 h-2 rounded-full"
-                      style={{ width: '100%' }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex flex-row items-center space-x-5">
-                  <div className="m-1 border-solid border-2 border-cyan-100 p-1 rounded-xl bg-cyan-100 w-1/3 flex flex-row">
-                    <span className="text-center w-full">Django</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
-                    <div
-                      className="bg-cyan-400 h-2 rounded-full"
-                      style={{ width: '100%' }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex flex-row items-center space-x-5">
-                  <div className="m-1 border-solid border-2 border-cyan-100 p-1 rounded-xl bg-cyan-100 w-1/3 flex flex-row">
-                    <span className="text-center w-full">FastAPI</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
-                    <div
-                      className="bg-cyan-900 h-2 rounded-full"
-                      style={{ width: '80%' }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex flex-row items-center space-x-5">
-                  <div className="m-1 border-solid border-2 border-cyan-100 p-1 rounded-xl bg-cyan-100 w-1/3 flex flex-row">
-                    <span className="text-center w-full">Celery</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
-                    <div
-                      className="bg-cyan-400 h-2 rounded-full"
-                      style={{ width: '70%' }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex flex-row items-center space-x-5">
-                  <div className="m-1 border-solid border-2 border-cyan-100 p-1 rounded-xl bg-cyan-100 w-1/3 flex flex-row">
-                    <span className="text-center w-full">JavaScript</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
-                    <div
-                      className="bg-cyan-900 h-2 rounded-full"
-                      style={{ width: '85%' }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex flex-row items-center space-x-5">
-                  <div className="m-1 border-solid border-2 border-cyan-100 p-1 rounded-xl bg-cyan-100 w-1/3 flex flex-row">
-                    <span className="text-center w-full">Node</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
-                    <div
-                      className="bg-cyan-400 h-2 rounded-full"
-                      style={{ width: '85%' }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex flex-row items-center space-x-5">
-                  <div className="m-1 border-solid border-2 border-cyan-100 p-1 rounded-xl bg-cyan-100 w-1/3 flex flex-row">
-                    <span className="text-center w-full">React</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
-                    <div
-                      className="bg-cyan-900 h-2 rounded-full"
-                      style={{ width: '50%' }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
         <div
           id="projects"
-          className="h-screen flex flex-row justify-center items-center content-center"
+          className="h-screen flex flex-col justify-center items-center content-center bg-white space-y-2"
         >
-          <h1>Projects</h1>
-          <button className="btn-blue">Olá</button>
+          <div className="w-10/12 flex flex-row space-x-2">
+            <div className="w-6/12  bg-white border-solid border-[1px] border-cyan-900 rounded-xl p-4 flex flex-col space-y-4 items-center">
+              <img src="/panteu.png" className="w-40" alt="" />
+              <h6 className="text-center">Desenvolvedor Backend</h6>
+            </div>
+            <div className="w-6/12  bg-white border-solid border-[1px] border-cyan-900 rounded-xl p-4 flex flex-col space-y-4">
+              <h6>DevOps Analyst</h6>
+            </div>
+            <div className="w-6/12  bg-white border-solid border-[1px] border-cyan-900 rounded-xl p-4 flex flex-col space-y-4">
+              <h6>Network engineer</h6>
+            </div>
+          </div>
         </div>
         <div
           id="contact"
