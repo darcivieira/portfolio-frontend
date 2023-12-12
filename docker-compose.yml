@@ -11,3 +11,7 @@ services:
       - HTTTPS_METHOD=redirect
     networks:
       - brasinov
+
+networks:
+  brasinov:
+    external: true
