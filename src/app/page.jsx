@@ -2,6 +2,9 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import './style.css';
 
 export default function Home() {
+  const handleClick = (e) => {
+    console.log(e);
+  };
   return (
     <div className="flex-col h-screen w-screen text-white font-semibold">
       <header className="z-20 fixed flex flex-row w-full h-16 bg-cyan-800 items-center space-x-6 pr-4 pl-4">
@@ -224,16 +227,31 @@ export default function Home() {
           id="projects"
           className="h-screen flex flex-col justify-center items-center content-center bg-white space-y-2"
         >
+          <h4 className="text-center font-bold mb-4">Ultimas experiências</h4>
           <div className="w-10/12 flex flex-row space-x-2">
-            <div className="w-6/12  bg-white border-solid border-[1px] border-cyan-900 rounded-xl p-4 flex flex-col space-y-4 items-center">
+            <div
+              onClick={handleClick}
+              className="w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-500 cursor-pointer select-none"
+            >
               <img src="/panteu.png" className="w-40" alt="" />
               <h6 className="text-center">Desenvolvedor Backend</h6>
+              <span>Descrição</span>
             </div>
-            <div className="w-6/12  bg-white border-solid border-[1px] border-cyan-900 rounded-xl p-4 flex flex-col space-y-4">
+            <div
+              onClick={handleClick}
+              className="w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-500 cursor-pointer select-none"
+            >
+              <img src="/involves.svg" className="w-40" alt="" />
               <h6>DevOps Analyst</h6>
+              <span>Descrição</span>
             </div>
-            <div className="w-6/12  bg-white border-solid border-[1px] border-cyan-900 rounded-xl p-4 flex flex-col space-y-4">
+            <div
+              onClick={handleClick}
+              className="w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-500 cursor-pointer select-none"
+            >
+              <img src="/involves.svg" className="w-40" alt="" />
               <h6>Network engineer</h6>
+              <span>Descrição</span>
             </div>
           </div>
         </div>
