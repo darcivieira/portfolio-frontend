@@ -19,10 +19,13 @@
     @apply text-2xl;
   }
   h6 {
-    @apply text-xl;
+    @apply text-xl font-semibold;
   }
   span {
     @apply font-normal text-base;
+  }
+  ul {
+    @apply list-inside list-disc
   }
 }
 
