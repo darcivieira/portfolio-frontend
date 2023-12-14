@@ -141,9 +141,9 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full h-full bg-white flex flex-col items-center">
-            <div className="relative flex flex-col items-center w-full h-[600px]">
-              <div className="h-[600px] w-10/12 absolute bg-white top-[-120px] rounded-xl border-solid border-[1px] border-cyan-200 flex divide-x">
-                <div className="w-1/2 flex flex-col items-center justify-start">
+            <div className="relative flex flex-col items-center w-full h-[1200px] sm:h-[600px]">
+              <div className="h-[1200px] sm:h-[600px] w-10/12 absolute bg-white top-[-120px] rounded-xl border-solid border-[1px] border-cyan-200 flex-col justify-evenly divide-y sm:divide-x sm:flex sm:flex-row">
+                <div className="w-full h-1/2 flex flex-col items-center justify-start sm:w-1/2 sm:h-auto">
                   <div className="flex flex-col items-center h-2/6 justify-start mt-10">
                     <div
                       id="image-container"
@@ -226,7 +226,7 @@ export default function Home() {
                     <span>MongoDB</span>
                   </div>
                 </div>
-                <div className="w-1/2 flex flex-col items-center justify-start">
+                <div className="w-full h-1/2 flex flex-col items-center justify-start sm:w-1/2 sm:h-auto">
                   <div className="flex flex-col items-center h-2/6 justify-start mt-10">
                     <div className="rounded-full bg-cyan-200 p-2">
                       <img
@@ -272,7 +272,7 @@ export default function Home() {
           className="flex flex-col justify-center items-center content-center space-y-2 p-10"
         >
           <h4 className="text-center font-bold mb-4">Ultimas experiências</h4>
-          <div className="w-10/12 flex flex-row space-x-2">
+          <div className="w-full flex flex-col items-center space-y-2 sm:flex sm:flex-row sm:w-10/12">
             <div
               onClick={() => handleClick('backend')}
               className="w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-200 cursor-pointer select-none"
