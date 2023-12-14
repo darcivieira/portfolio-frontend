@@ -5,8 +5,8 @@ services:
     container_name: portfolio_frontend
     restart: always
     environment:
-      - VIRTUAL_HOST=www.djvieirajr.com,portfolio.djvieirajr.com
-      - LETSENCRYPT_HOST=www.djvieirajr.com,portfolio.djvieirajr.com
+      - VIRTUAL_HOST=djvieirajr.com,www.djvieirajr.com,portfolio.djvieirajr.com
+      - LETSENCRYPT_HOST=djvieirajr.com,www.djvieirajr.com,portfolio.djvieirajr.com
       - VIRTUAL_PORT=3000
       - HTTTPS_METHOD=redirect
     networks:

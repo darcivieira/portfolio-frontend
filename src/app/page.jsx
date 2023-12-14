@@ -11,12 +11,11 @@ export default function Home() {
   };
   return (
     <div className="flex-col h-screen w-screen text-white text-sm">
-      {/* <header className="flex flex-row w-full h-16 bg-cyan-800 items-center space-x-6 pr-4 pl-4"> */}
-      <header className="z-20 fixed flex flex-row w-full h-16 bg-cyan-800 items-center space-x-6 pr-4 pl-4">
+      {/* <header className="z-20 fixed flex flex-row w-full h-16 bg-cyan-800 items-center space-x-6 pr-4 pl-4">
         <div>
           <h1 className="text-xl font-bold">Backend developer</h1>
         </div>
-        {/* <nav className="flex text-white font-semibold justify-end flex-1">
+        <nav className="flex text-white font-semibold justify-end flex-1">
           <ul className="flex flex-row justify-between space-x-4 list-none">
             <li>
               <a href="#home">Inicio</a>
@@ -31,12 +30,12 @@ export default function Home() {
               <a href="#contact">Contato</a>
             </li>
           </ul>
-        </nav> */}
+        </nav>
         <aside className="flex flex-row flex-4 justify-end space-x-4 flex-1">
           <a href="">Login</a>
           <a href="">Registrar</a>
         </aside>
-      </header>
+      </header> */}
       <nav className="fixed top-1/3 space-x-10 p-4 rounded-r-lg bg-cyan-800 z-10">
         <ul className="space-y-4 list-none">
           <li>
@@ -72,7 +71,7 @@ export default function Home() {
               Automatizo processos e desenvolvo soluções corporativas.{' '}
             </span>
           </div>
-          <div className="w-full h-3/6 bg-white flex flex-col justify-start items-center content-center relative">
+          <div className="w-full h-4/6 bg-white flex flex-col justify-start items-center content-center relative">
             <div className="rounded-full bg-white p-2 absolute top-[-40px] md:top-[-50px] lg:top-[-140px]">
               <img
                 className="inline-block h-20 w-20 rounded-full ring-2 ring-white object-cover md:h-20 md:w-20 lg:h-40 lg:w-40"
