@@ -34,7 +34,13 @@ export default function Home() {
       },
       body: JSON.stringify(data)
     })
-      .then((resp) => console.log(resp))
+      .then((resp) => {
+        if (resp.status === 200) {
+          setEmail('');
+          setMessage('');
+          setSubject('');
+        }
+      })
       .catch((err) => console.log(err));
   };
 
@@ -273,7 +279,9 @@ export default function Home() {
             >
               <img src="/panteu.png" className="w-40" alt="" />
               <h6 className="text-center">Desenvolvedor Backend</h6>
-              <span>Descrição</span>
+              <span className="text-center text-cyan-100">
+                Desenvolvendo solução para o mercado de seguro garantia
+              </span>
             </div>
             <div
               onClick={() => handleClick('devops')}
@@ -281,7 +289,9 @@ export default function Home() {
             >
               <img src="/involves.svg" className="w-40" alt="" />
               <h6>DevOps Analyst</h6>
-              <span>Descrição</span>
+              <span className="text-center text-cyan-100">
+                Atomatizando rotinas e processos
+              </span>
             </div>
             <div
               onClick={() => handleClick('network')}
@@ -289,7 +299,9 @@ export default function Home() {
             >
               <img src="/involves.svg" className="w-40" alt="" />
               <h6>Network engineer</h6>
-              <span>Descrição</span>
+              <span className="text-center text-cyan-100">
+                Atomatizando rotinas e processos
+              </span>
             </div>
           </div>
         </div>
