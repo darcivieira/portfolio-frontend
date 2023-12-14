@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 // dotenv.config();
 
-export async function POST(req, res) {
+export async function POST(req) {
   const data = await req.json();
   let nodemailer = require('nodemailer');
   console.log(process.env.SMTP_USER);
