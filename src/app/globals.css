@@ -22,7 +22,7 @@
     @apply text-xl font-semibold;
   }
   span {
-    @apply font-normal text-base;
+    @apply font-normal text-sm;
   }
   ul {
     @apply list-inside list-disc
@@ -30,8 +30,11 @@
 }
 
 @layer components {
-  .btn-blue {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  .btn-cyan {
+    @apply bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded;
+  }
+  .btn-border {
+    @apply border border-cyan-200 hover:bg-cyan-200 text-cyan-700 font-bold py-2 px-4 rounded;
   }
 }
 

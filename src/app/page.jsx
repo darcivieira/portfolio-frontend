@@ -5,10 +5,39 @@ import { useState } from 'react';
 
 export default function Home() {
   const [modal, setModal] = useState(null);
+  const [subject, setSubject] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleClick = (e) => {
     setModal(e);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(subject);
+    console.log(email);
+    console.log(message);
+
+    let data = {
+      subject,
+      email,
+      message
+    };
+
+    console.log(data);
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then((resp) => console.log(resp))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="flex-col h-screen w-screen text-white text-sm">
       {/* <header className="z-20 fixed flex flex-row w-full h-16 bg-cyan-800 items-center space-x-6 pr-4 pl-4">
@@ -68,7 +97,7 @@ export default function Home() {
               Backend Developer & Network Engineer
             </h3>
             <span className="text-center font-normal text-sm">
-              Automatizo processos e desenvolvo soluções corporativas.{' '}
+              Automatizo processos e desenvolvo soluções corporativas.
             </span>
           </div>
           <div className="w-full h-4/6 bg-white flex flex-col justify-start items-center content-center relative">
@@ -82,7 +111,7 @@ export default function Home() {
             <div className="static h-full w-full">
               <img
                 src="/hero-devices.svg"
-                className="object-scale-down w-full h-full"
+                className="object-cover w-full h-full"
                 alt=""
               />
             </div>
@@ -233,7 +262,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          id="projects"
+          id="experiences"
           className="flex flex-col justify-center items-center content-center space-y-2 p-10"
         >
           <h4 className="text-center font-bold mb-4">Ultimas experiências</h4>
@@ -263,225 +292,277 @@ export default function Home() {
               <span>Descrição</span>
             </div>
           </div>
-          {modal ? (
-            <>
-              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                  <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                    <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                      {modal === 'backend' && (
-                        <h6>Panteu Tecnologia - Desenvolvedor Backend</h6>
-                      )}
-                      {modal === 'devops' && <h6>Involves - DevOps Analyst</h6>}
-                      {modal === 'network' && (
-                        <h6>Involves - Network engineer</h6>
-                      )}
-                      <button
-                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-20 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                        onClick={() => handleClick(null)}
-                      >
-                        <span className="bg-transparent text-black opacity-95 font-bold h-6 w-6 text-2xl block outline-none focus:outline-none">
-                          x
+        </div>
+        {modal ? (
+          <>
+            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+              <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                  <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                    {modal === 'backend' && (
+                      <h6>Panteu Tecnologia - Desenvolvedor Backend</h6>
+                    )}
+                    {modal === 'devops' && <h6>Involves - DevOps Analyst</h6>}
+                    {modal === 'network' && (
+                      <h6>Involves - Network engineer</h6>
+                    )}
+                    <button
+                      className="p-1 ml-auto bg-transparent border-0 text-black opacity-20 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                      onClick={() => handleClick(null)}
+                    >
+                      <span className="bg-transparent text-black opacity-95 font-bold h-6 w-6 text-2xl block outline-none focus:outline-none">
+                        x
+                      </span>
+                    </button>
+                  </div>
+                  <div className="relative p-6 text-sm flex-auto mb-4">
+                    {modal === 'backend' && (
+                      <>
+                        <span className="my-4 text-blueGray-500 text-normal font-normal leading-relaxed">
+                          Construção de uma nova solução de mercado:
                         </span>
-                      </button>
-                    </div>
-                    <div className="relative p-6 text-sm flex-auto mb-4">
-                      {modal === 'backend' && (
-                        <>
-                          <span className="my-4 text-blueGray-500 text-normal font-normal leading-relaxed">
-                            Construção de uma nova solução de mercado:
-                          </span>
-                          <ul>
-                            <li>
-                              Atuei no levantamento de requisitos para
-                              construção de uma solução viável de mercado.
-                            </li>
-                            <li>
-                              Implementei as pipelines que automatizam os
-                              processos de CI/CD da aplicação.
-                            </li>
-                            <li>
-                              Liderei o desenvolvimento da principal estrutura
-                              de back-end.
-                            </li>
-                            <li>
-                              Apoiei no desenvolvimento do micro serviço
-                              responsável pelas notificações do sistema.
-                            </li>
-                            <li>
-                              Atuei intensamente no desenvolvimento do micro
-                              serviço responsável pela integração com as APIs
-                              das maiores seguradoras do Brasil.
-                            </li>
-                            <li>
-                              Trabalhei na criação de um micro serviço que
-                              permitia a interação do sistema com um bot coleta
-                              de processos via Web Scraping.
-                            </li>
-                            <li>
-                              Atuei na integração entre frontend e backend da
-                              aplicação.
-                            </li>
-                          </ul>
-                          <br />
-                          <span className="my-4 text-blueGray-500 text-normal font-normal leading-relaxed">
-                            Principais tecnologias utilizadas:
-                          </span>
-                          <ul>
-                            <li>
-                              Python: Celery, Django, FastApi, Flask,
-                              SQLAlchemy, pymongo
-                            </li>
-                            <li>Javascript: Node.js</li>
-                            <li>Database: PostgreSQL, MongoDB</li>
-                          </ul>
-                        </>
-                      )}
-                      {modal === 'devops' && (
-                        <>
-                          <span className="my-4 text-blueGray-500 text-normal leading-relaxed font-semibold">
-                            Automação dos processos:
-                          </span>
-                          <ul>
-                            <li>
-                              Integrei as plataformas AWS e GitHub a um sistema
-                              de gestão de acesso desenvolvido internamente.
-                            </li>
-                            <li>
-                              Desenvolvi um chatbot para interagir com a solução
-                              Vault, para facilitar na pesquisa por credenciais
-                              de acesso compartilhadas e individuais.
-                            </li>
-                            <li>
-                              Implementei um script para gestão das credenciais
-                              de acesso a VPN
-                            </li>
-                          </ul>
-                          <br />
-                          <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
-                            Criação de dashboard de monitoramento:
-                          </span>
-                          <ul>
-                            <li>
-                              Atuei no levantamento dos novos indicadores e no
-                              desenvolvimento das dashboards.
-                            </li>
-                          </ul>
-                          <br />
-                          <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
-                            Apoio ao time de desenvolvimento:
-                          </span>
-                          <ul>
-                            <li>
-                              Apoiei o time de desenvolvimento referente a
-                              utilização da infraestrutura.
-                            </li>
-                          </ul>
-                          <br />
-                          <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
-                            Principais tecnologias utilizadas:
-                          </span>
-                          <ul>
-                            <li>Python: Django, Flask</li>
-                            <li>Database: PostgreSQL, MongoDB</li>
-                            <li>Monitoramento: Zabbix, Prometheus, Grafana</li>
-                          </ul>
-                        </>
-                      )}
-                      {modal === 'network' && (
-                        <>
-                          <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
-                            Automação de processos:
-                          </span>
-                          <ul>
-                            <li>
-                              Integrei ao ERP uma solução que desenvolvi e que
-                              permitiu a gestão de acessos a outras plataformas
-                              adquiridas pela empresa
-                            </li>
-                            <li>
-                              Implementei um chatbot para acompanhar o processo
-                              de novas contratações da empresa e disponibilizar
-                              a relação de novos colaboradores.
-                            </li>
-                            <li>
-                              Desenvolvi um dashboard em React para visualizar a
-                              utilização do sistema de VPN pelos colaboradores
-                              da empresa.
-                            </li>
-                            <li>
-                              Desenvolvi um script que gerava relatórios mensais
-                              da utilização do sistema telefônico e encaminha as
-                              lideranças de cada área.
-                            </li>
-                            <li>
-                              Desenvolvi solução com um frontend em React, que
-                              permitia agendar notificações e realizar os
-                              disparos pelos principais canais utilizados da
-                              empresa.
-                            </li>
-                            <li>
-                              Desenvolvi um chatbot que permitisse manipular a
-                              estrutura de redes, como por exemplo a de
-                              atualizar portas dos switches.
-                            </li>
-                          </ul>
-                          <br />
-                          <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
-                            Construção de uma estrutura de redes escalável:
-                          </span>
-                          <ul>
-                            <li>
-                              Atuei intensamente na elaboração de uma estrutura
-                              de rede que diminuísse os gargalos proveniente ao
-                              crescimento que a empresa vinha tendo.
-                            </li>
-                            <li>
-                              Atuei na implantação de novas soluções que
-                              permitissem esse crescimento: aquisição e
-                              implantação de switches, aquisição e implantação
-                              Firewall e implantação do protocolo 802.1X.
-                            </li>
-                            <li>
-                              Atuei na implantação de sistemas de monitoramento
-                              da rede.
-                            </li>
-                          </ul>
-                          <br />
-                          <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
-                            Apoio aos colaboradores:
-                          </span>
-                          <ul>
-                            <li>
-                              Prestei suporte ao time referente a utilização da
-                              infraestrutura.
-                            </li>
-                          </ul>
-                          <br />
-                          <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
-                            Principais tecnologias utilizadas:
-                          </span>
-                          <ul>
-                            <li>Python: Django, Flask</li>
-                            <li>Javascript: Node.js, React.js</li>
-                            <li>Database: PostgreSQL, MongoDB</li>
-                            <li>Monitoramento: Zabbix</li>
-                          </ul>
-                        </>
-                      )}
-                    </div>
+                        <ul>
+                          <li>
+                            Atuei no levantamento de requisitos para construção
+                            de uma solução viável de mercado.
+                          </li>
+                          <li>
+                            Implementei as pipelines que automatizam os
+                            processos de CI/CD da aplicação.
+                          </li>
+                          <li>
+                            Liderei o desenvolvimento da principal estrutura de
+                            back-end.
+                          </li>
+                          <li>
+                            Apoiei no desenvolvimento do micro serviço
+                            responsável pelas notificações do sistema.
+                          </li>
+                          <li>
+                            Atuei intensamente no desenvolvimento do micro
+                            serviço responsável pela integração com as APIs das
+                            maiores seguradoras do Brasil.
+                          </li>
+                          <li>
+                            Trabalhei na criação de um micro serviço que
+                            permitia a interação do sistema com um bot coleta de
+                            processos via Web Scraping.
+                          </li>
+                          <li>
+                            Atuei na integração entre frontend e backend da
+                            aplicação.
+                          </li>
+                        </ul>
+                        <br />
+                        <span className="my-4 text-blueGray-500 text-normal font-normal leading-relaxed">
+                          Principais tecnologias utilizadas:
+                        </span>
+                        <ul>
+                          <li>
+                            Python: Celery, Django, FastApi, Flask, SQLAlchemy,
+                            pymongo
+                          </li>
+                          <li>Javascript: Node.js</li>
+                          <li>Database: PostgreSQL, MongoDB</li>
+                        </ul>
+                      </>
+                    )}
+                    {modal === 'devops' && (
+                      <>
+                        <span className="my-4 text-blueGray-500 text-normal leading-relaxed font-semibold">
+                          Automação dos processos:
+                        </span>
+                        <ul>
+                          <li>
+                            Integrei as plataformas AWS e GitHub a um sistema de
+                            gestão de acesso desenvolvido internamente.
+                          </li>
+                          <li>
+                            Desenvolvi um chatbot para interagir com a solução
+                            Vault, para facilitar na pesquisa por credenciais de
+                            acesso compartilhadas e individuais.
+                          </li>
+                          <li>
+                            Implementei um script para gestão das credenciais de
+                            acesso a VPN
+                          </li>
+                        </ul>
+                        <br />
+                        <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
+                          Criação de dashboard de monitoramento:
+                        </span>
+                        <ul>
+                          <li>
+                            Atuei no levantamento dos novos indicadores e no
+                            desenvolvimento das dashboards.
+                          </li>
+                        </ul>
+                        <br />
+                        <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
+                          Apoio ao time de desenvolvimento:
+                        </span>
+                        <ul>
+                          <li>
+                            Apoiei o time de desenvolvimento referente a
+                            utilização da infraestrutura.
+                          </li>
+                        </ul>
+                        <br />
+                        <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
+                          Principais tecnologias utilizadas:
+                        </span>
+                        <ul>
+                          <li>Python: Django, Flask</li>
+                          <li>Database: PostgreSQL, MongoDB</li>
+                          <li>Monitoramento: Zabbix, Prometheus, Grafana</li>
+                        </ul>
+                      </>
+                    )}
+                    {modal === 'network' && (
+                      <>
+                        <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
+                          Automação de processos:
+                        </span>
+                        <ul>
+                          <li>
+                            Integrei ao ERP uma solução que desenvolvi e que
+                            permitiu a gestão de acessos a outras plataformas
+                            adquiridas pela empresa
+                          </li>
+                          <li>
+                            Implementei um chatbot para acompanhar o processo de
+                            novas contratações da empresa e disponibilizar a
+                            relação de novos colaboradores.
+                          </li>
+                          <li>
+                            Desenvolvi um dashboard em React para visualizar a
+                            utilização do sistema de VPN pelos colaboradores da
+                            empresa.
+                          </li>
+                          <li>
+                            Desenvolvi um script que gerava relatórios mensais
+                            da utilização do sistema telefônico e encaminha as
+                            lideranças de cada área.
+                          </li>
+                          <li>
+                            Desenvolvi solução com um frontend em React, que
+                            permitia agendar notificações e realizar os disparos
+                            pelos principais canais utilizados da empresa.
+                          </li>
+                          <li>
+                            Desenvolvi um chatbot que permitisse manipular a
+                            estrutura de redes, como por exemplo a de atualizar
+                            portas dos switches.
+                          </li>
+                        </ul>
+                        <br />
+                        <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
+                          Construção de uma estrutura de redes escalável:
+                        </span>
+                        <ul>
+                          <li>
+                            Atuei intensamente na elaboração de uma estrutura de
+                            rede que diminuísse os gargalos proveniente ao
+                            crescimento que a empresa vinha tendo.
+                          </li>
+                          <li>
+                            Atuei na implantação de novas soluções que
+                            permitissem esse crescimento: aquisição e
+                            implantação de switches, aquisição e implantação
+                            Firewall e implantação do protocolo 802.1X.
+                          </li>
+                          <li>
+                            Atuei na implantação de sistemas de monitoramento da
+                            rede.
+                          </li>
+                        </ul>
+                        <br />
+                        <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
+                          Apoio aos colaboradores:
+                        </span>
+                        <ul>
+                          <li>
+                            Prestei suporte ao time referente a utilização da
+                            infraestrutura.
+                          </li>
+                        </ul>
+                        <br />
+                        <span className="my-4 text-blueGray-500 text-normal font-semibold leading-relaxed">
+                          Principais tecnologias utilizadas:
+                        </span>
+                        <ul>
+                          <li>Python: Django, Flask</li>
+                          <li>Javascript: Node.js, React.js</li>
+                          <li>Database: PostgreSQL, MongoDB</li>
+                          <li>Monitoramento: Zabbix</li>
+                        </ul>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
-              <div className="opacity-50 fixed inset-0 z-40 bg-black"></div>
-            </>
-          ) : null}
-        </div>
+            </div>
+            <div className="opacity-50 fixed inset-0 z-40 bg-black"></div>
+          </>
+        ) : null}
         <div
           id="contact"
-          className="h-screen flex flex-row justify-center items-center content-center bg-white"
+          className="flex flex-col justify-start items-center content-center bg-white"
         >
-          Contact
+          <div className="mt-20">
+            <h5 className="font-semibold">Entre em contato!</h5>
+          </div>
+          <div className="mt-20 mb-20">
+            <form onSubmit={handleSubmit}>
+              <div className="grid gap-6 mb-6 md:grid-cols-2">
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Assunto
+                  </label>
+                  <input
+                    name="subject"
+                    type="text"
+                    onChange={(e) => setSubject(e.target.value)}
+                    value={subject}
+                    className="bg-cyan-50 border border-cyan-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Endereço de e-mail
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    className="bg-cyan-50 border border-cyan-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <div className="col-span-2">
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Mensagem
+                  </label>
+                  <textarea
+                    name="message"
+                    rows="4"
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
+                    className="bg-cyan-50 border border-cyan-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <div></div>
+                <div className="flex flex-row justify-end space-x-2">
+                  <button type="submit" className="btn-border">
+                    Cancelar
+                  </button>
+                  <button type="submit" className="btn-cyan">
+                    Enviar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </main>
       <footer className="h-60 bg-cyan-950">Rodapé</footer>
