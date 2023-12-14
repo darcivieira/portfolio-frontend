@@ -565,7 +565,23 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="h-60 bg-cyan-950">Rodapé</footer>
+      <footer className="h-60 bg-cyan-950 flex flex-col justify-end divide-y-[1px]">
+        <div className="flex flex-row justify-around mb-6 h-full">
+          <div className="w-2/6 self-center">
+            <h4 className="font-bold">Darci João Vieira Jr</h4>
+            <span>
+              Desenvolvedor backend experiente em Python, Django, Celery e
+              desenvolvimento web
+            </span>
+          </div>
+          <div>{/* <h4 className="font-bold">Darci João Vieira Jr</h4> */}</div>
+        </div>
+        <div className="flex justify-center p-4">
+          <span className="font-semibold text-xs">
+            © Copyright 2023 - Powered by Darci João Vieira Junior
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }
