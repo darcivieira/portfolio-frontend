@@ -46,31 +46,6 @@ export default function Home() {
 
   return (
     <div className="flex-col h-screen w-screen text-white text-sm">
-      {/* <header className="z-20 fixed flex flex-row w-full h-16 bg-cyan-800 items-center space-x-6 pr-4 pl-4">
-        <div>
-          <h1 className="text-xl font-bold">Backend developer</h1>
-        </div>
-        <nav className="flex text-white font-semibold justify-end flex-1">
-          <ul className="flex flex-row justify-between space-x-4 list-none">
-            <li>
-              <a href="#home">Inicio</a>
-            </li>
-            <li>
-              <a href="#about">Sobre</a>
-            </li>
-            <li>
-              <a href="#projects">Projetos</a>
-            </li>
-            <li>
-              <a href="#contact">Contato</a>
-            </li>
-          </ul>
-        </nav>
-        <aside className="flex flex-row flex-4 justify-end space-x-4 flex-1">
-          <a href="">Login</a>
-          <a href="">Registrar</a>
-        </aside>
-      </header> */}
       <nav className="fixed top-1/3 space-x-10 p-4 rounded-r-lg bg-cyan-800 z-10">
         <ul className="space-y-4 list-none">
           <li>
@@ -98,18 +73,18 @@ export default function Home() {
           id="home"
           className="h-screen flex flex-col justify-end items-center content-center"
         >
-          <div className="mb-40 flex flex-col justify-center">
-            <h3 className="text-cyan-950">
+          <div className="mb-40 flex flex-col justify-center items-center">
+            <h3 className="text-cyan-950 font-semibold">
               Backend Developer & Network Engineer
             </h3>
             <span className="text-center font-normal text-sm">
               Automatizo processos e desenvolvo soluções corporativas.
             </span>
           </div>
-          <div className="w-full h-4/6 bg-white flex flex-col justify-start items-center content-center relative">
-            <div className="rounded-full bg-white p-2 absolute top-[-40px] md:top-[-50px] lg:top-[-140px]">
+          <div className="w-full bg-white flex flex-col justify-start items-center content-center relative pt-80 sm:pt-20">
+            <div className="rounded-full bg-white p-2 absolute top-[-140px] md:top-[-50px] lg:top-[-140px]">
               <img
-                className="inline-block h-20 w-20 rounded-full ring-2 ring-white object-cover md:h-20 md:w-20 lg:h-40 lg:w-40"
+                className="inline-block h-40 w-40 rounded-full ring-2 ring-white object-cover md:h-20 md:w-20 lg:h-40 lg:w-40"
                 src="/djvjr.png"
                 alt=""
               />
@@ -117,7 +92,7 @@ export default function Home() {
             <div className="static h-full w-full">
               <img
                 src="/hero-devices.svg"
-                className="object-cover w-full h-full"
+                className="object-fill w-full h-full"
                 alt=""
               />
             </div>
@@ -272,35 +247,35 @@ export default function Home() {
           className="flex flex-col justify-center items-center content-center space-y-2 p-10"
         >
           <h4 className="text-center font-bold mb-4">Ultimas experiências</h4>
-          <div className="w-full flex flex-col items-center space-y-2 sm:flex sm:flex-row sm:w-10/12">
+          <div className="w-9/12 flex flex-col items-center space-y-2 sm:space-y-0 sm:flex sm:flex-row sm:w-10/12 sm:items-center sm:content-center">
             <div
               onClick={() => handleClick('backend')}
-              className="w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-200 cursor-pointer select-none"
+              className="sm:h-40 w-full sm:w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-200 cursor-pointer select-none"
             >
-              <img src="/panteu.png" className="w-40" alt="" />
+              <img src="/panteu.png" className="h-10" alt="" />
               <h6 className="text-center">Desenvolvedor Backend</h6>
               <span className="text-center text-cyan-100">
-                Desenvolvendo solução para o mercado de seguro garantia
+                Confira as minhas experiencias!
               </span>
             </div>
             <div
               onClick={() => handleClick('devops')}
-              className="w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-200 cursor-pointer select-none"
+              className="sm:h-40 w-full sm:w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-200 cursor-pointer select-none"
             >
-              <img src="/involves.svg" className="w-40" alt="" />
+              <img src="/involves.svg" className="h-10" alt="" />
               <h6>DevOps Analyst</h6>
               <span className="text-center text-cyan-100">
-                Atomatizando rotinas e processos
+                Confira as minhas experiencias!
               </span>
             </div>
             <div
               onClick={() => handleClick('network')}
-              className="w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-200 cursor-pointer select-none"
+              className="sm:h-40 w-full sm:w-6/12  bg-cyan-600 hover:bg-cyan-500 border-solid border-[1px] border-cyan-200 rounded-xl p-4 flex flex-col space-y-4 items-center shadow-lg active:shadow-sm active:translate-y-[4px] active:scale-95 active:ease-in-out active:duration-200 cursor-pointer select-none"
             >
-              <img src="/involves.svg" className="w-40" alt="" />
+              <img src="/involves.svg" className="h-10" alt="" />
               <h6>Network engineer</h6>
               <span className="text-center text-cyan-100">
-                Atomatizando rotinas e processos
+                Confira as minhas experiencias!
               </span>
             </div>
           </div>
@@ -524,10 +499,10 @@ export default function Home() {
           <div className="mt-20">
             <h5 className="font-semibold">Entre em contato!</h5>
           </div>
-          <div className="mt-20 mb-20">
+          <div className="p-24 sm:mt-20 sm:mb-20 sm:p-0 ">
             <form onSubmit={handleSubmit}>
               <div className="grid gap-6 mb-6 md:grid-cols-2">
-                <div>
+                <div className="col-span-2 sm:col-span-1">
                   <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Assunto
                   </label>
@@ -539,7 +514,7 @@ export default function Home() {
                     className="bg-cyan-50 border border-cyan-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
-                <div>
+                <div className="col-span-2 sm:col-span-1">
                   <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Endereço de e-mail
                   </label>
@@ -563,8 +538,7 @@ export default function Home() {
                     className="bg-cyan-50 border border-cyan-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
-                <div></div>
-                <div className="flex flex-row justify-end space-x-2">
+                <div className="col-span-2 flex flex-row justify-center sm:justify-end space-x-2">
                   <button type="submit" className="btn-border">
                     Cancelar
                   </button>
@@ -579,14 +553,13 @@ export default function Home() {
       </main>
       <footer className="h-60 bg-cyan-950 flex flex-col justify-end divide-y-[1px]">
         <div className="flex flex-row justify-around mb-6 h-full">
-          <div className="w-2/6 self-center">
+          <div className="w-2/3 sm:w-2/6 self-center">
             <h4 className="font-bold">Darci João Vieira Jr</h4>
             <span>
               Desenvolvedor backend experiente em Python, Django, Celery e
-              desenvolvimento web
+              desenvolvimento web.
             </span>
           </div>
-          <div>{/* <h4 className="font-bold">Darci João Vieira Jr</h4> */}</div>
         </div>
         <div className="flex justify-center p-4">
           <span className="font-semibold text-xs">
