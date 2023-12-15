@@ -12,7 +12,7 @@ export async function POST(req) {
     host: process.env.SMTP_HOST,
     auth: {
       user: process.env.SMTP_USER,
-      pass: 'mqll qtjl pwnt apmd'
+      pass: process.env.SMTP_PASSWORD
     },
     secure: true
   });
